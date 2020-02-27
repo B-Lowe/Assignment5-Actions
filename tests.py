@@ -33,7 +33,7 @@ class TestCase(unittest.TestCase):
         for i in range(list_size):
             list_int.append(random.randint(0, 100))
         # Assert that the function returns first and last elements of list
-        expected = "first: " + list_int[0] + ", last: " + list_int[list_size - 1]
+        expected = "first: " + str(list_int[0]) + ", last: " + str(list_int[list_size - 1])
         self.assertEqual(task.first_and_last(list_int), expected)
 
 
