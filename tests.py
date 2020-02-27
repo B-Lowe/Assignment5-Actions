@@ -1,6 +1,7 @@
 import unittest
 import task
 import math
+import random
 
 
 class TestCase(unittest.TestCase):
@@ -14,9 +15,11 @@ class TestCase(unittest.TestCase):
         self.assertNotEqual(expected, task.firstrun())
 
     def test_circle_area(self):
-        self.assertEqual(task.circle_area(1), (math.pi ** 2))
-        self.assertEqual(task.circle_area(2), 2 * (math.pi ** 2))
-        self.assertEqual(task.circle_area(3), 3 * (math.pi ** 2))
+        # Test random integers
+        random.seed(1)
+        for i in range(0, 5):
+            random_int = random.randint(0, 100)
+            self.assertEqual(task.circle_area(random_int), random_int * (math.pi ** 2))
 
 
 if __name__ == "__main__":
