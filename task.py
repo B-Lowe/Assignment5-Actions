@@ -16,5 +16,8 @@ def first_and_last(some_list):
 
 
 def diff_days(first_date, second_date):
-    diff_days = second_date - first_date
-    return diff_days.days
+    if (isinstance(first_date, datetime.datetime) and isinstance(second_date, datetime.datetime)):
+        diff_days = second_date - first_date
+        return diff_days.days
+    else:
+        return -1
